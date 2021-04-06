@@ -26,7 +26,7 @@ env_vars = Variable.get("TPM_ETA_VARS", deserialize_json=True)
 
 dag_name = "med_cf_create_dataset"
 
-#dag
+#dag details
 dag = DAG(dag_name, default_args = default_args, schedule_interval = schedule_interval, tags = ['cloud_function', 'create_automl_dataset'],access_control = {"test_acc_control" : {"can_read", "can_edit"}})
 
 payload = Variable.get("CF_PAYLOADS", deserialize_json = True)
